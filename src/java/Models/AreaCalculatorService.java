@@ -20,6 +20,7 @@ public class AreaCalculatorService {
     private double dWidth;
     private double dRadius;
     private double area;
+    private final String DECIMAL_FORMAT = "%.2f";
     
     private final double convertToDouble(String val) throws Exception{
         
@@ -28,31 +29,31 @@ public class AreaCalculatorService {
         return dVal;
     }
     
-    private final double calculateRectangleArea(String height, String width) throws Exception{
+    private final String calculateRectangleArea(String height, String width) throws Exception{
         
     
         
             dHeight = this.convertToDouble(height);
          dWidth = this.convertToDouble(width);
          area = (dWidth * dHeight);
-         return area;
+         return String.format(this.DECIMAL_FORMAT, area);
         
     }
-    private final double calculateTriangleArea(String height, String width) throws Exception{
+    private final String calculateTriangleArea(String height, String width) throws Exception{
        
          dHeight = this.convertToDouble(height);
          dWidth = this.convertToDouble(width);
          
          area = ((dWidth * dHeight)/2);
          
-        return area;
+         return String.format(this.DECIMAL_FORMAT, area);
     }
-    private final double calculateCircleArea(String radius)throws Exception{
+    private final String calculateCircleArea(String radius)throws Exception{
         dRadius = this.convertToDouble(radius);
         
         area = (dRadius*dRadius) * Math.PI;
         
-        return area;
+         return String.format(this.DECIMAL_FORMAT, area);
     }
     public final String calculateArea(String radius, String height, String width, String shape){
          switch (shape.toLowerCase()) {

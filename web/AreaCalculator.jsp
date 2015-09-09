@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="i" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -40,7 +41,7 @@
         <input type="submit" value="Calculate" name="submit" id="submit"/>
         </form>
          <p style="color:blue;">
-             ${circleMessage}
+            ${circleMessage}
          </p>
     </body>
 </html>
